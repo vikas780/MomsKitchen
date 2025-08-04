@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import logo from '@/public/logo1.png'
+import about from '@/public/about.jpeg'
 
 export default async function Home() {
   const aboutUsData = [
@@ -59,33 +60,44 @@ export default async function Home() {
         </div>
       </div>
 
-      <div className='flex flex-col gap-5 justify-start items-center md:items-start'>
-        <div className='flex flex-col relative md:mt-28 lg:text-5xl text-4xl text-[#331B3B] leading-[106.3%] -tracking-[0.01] ont-hindVadodara'>
-          <h1 className=' font-bold text-center md:text-left'>About Us</h1>
-          <span className='lg:text-5xl text-4xl font-light'>
-            Fake or
-            <span className='ml-3 relative z-10'>
-              Real
-              <span className='bg-[#FDC221] h-2 bottom-[10px] lg:bottom-[14px] -z-[1] left-0 absolute w-full' />
-            </span>
-          </span>
+      <div className='flex justify-between items-center w-full px-5 sm:px-[50px] flex-col-reverse md:flex-row mt-11 sm:mt-0 gap-16 md:gap-4'>
+        <div className='relative'>
+          <Image
+            src={about}
+            className='md:h-full sm:h-[462px] h-[278px] !z-40 relative'
+            alt='about us'
+            width={350}
+            height={350}
+          />
         </div>
-        <div className='flex flex-col gap-2 p-5'>
-          {aboutUsData.map((data, index) => {
-            return (
-              <span
-                className='text-[15px] mt-[6px] max-w-[515px] text-center md:text-left Light font-light font-hindVadodara leading-[145.3%] tracking-[0.02]'
-                key={index}
-              >
-                {data}
+        <div className='flex flex-col gap-5 justify-start items-center md:items-start'>
+          <div className='flex flex-col relative md:mt-28 lg:text-5xl text-4xl text-[#331B3B] leading-[106.3%] -tracking-[0.01] ont-hindVadodara'>
+            <h1 className=' font-bold text-center md:text-left'>About Us</h1>
+            <span className='lg:text-5xl text-4xl font-light'>
+              Fake or
+              <span className='ml-3 relative z-10'>
+                Real
+                <span className='bg-[#FDC221] h-2 md:bottom-2 bottom-1 -z-[1] absolute w-full right-[100px] sm:right-0 left-0' />{' '}
               </span>
-            )
-          })}
-        </div>
-        <div className='mt-2 md:mt-10'>
-          <button className='self-center md:self-start max-w-[207px] py-[18px] lg:px-5 w-full flex justify-center items-center font-bold leading-[137.3%] tracking-wide bg-[#331B3B] text-white rounded-md px-5'>
-            Explore More
-          </button>
+            </span>
+          </div>
+          <div className='flex flex-col gap-2 p-5 lg:p-0'>
+            {aboutUsData.map((data, index) => {
+              return (
+                <span
+                  className='text-[15px] mt-[6px] max-w-[515px] text-center md:text-left Light font-medium tracking-[0.02] '
+                  key={index}
+                >
+                  {data}
+                </span>
+              )
+            })}
+          </div>
+          <div className='mt-2 md:mt-10'>
+            <button className='self-center md:self-start max-w-[207px] py-[18px] lg:px-5 w-full flex justify-center items-center font-bold leading-[137.3%] tracking-wide bg-[#331B3B] text-white rounded-md px-5'>
+              Explore More
+            </button>
+          </div>
         </div>
       </div>
 
