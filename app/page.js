@@ -39,7 +39,7 @@ export default async function Home() {
           </div>
           <div className='max-w-[515px] flex flex-col gap-8'>
             <span className='text-[17px] font-normal font-hindVadodara leading-[146.3%] tracking-wide text-center md:text-left lg:mt-4 md:mt-3 mt-2'>
-              Busy days shouldn't mean unhealthy meals. Our tiffins bring
+              Busy days should not mean unhealthy meals. Our tiffins bring
               home-style flavors, crafted fresh and delivered with love—just
               like Mom makes.
             </span>
