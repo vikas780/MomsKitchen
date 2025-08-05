@@ -122,7 +122,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className='flex lg:min-h-[34rem] min-h-[97rem] pt-[30px] px-[40px] bg-[#331B3B] mb-3 rounded-[10px] mx-2'>
+        <div className='flex lg:min-h-[34rem] md:min-h-[62rem] min-h-[64rem] pt-[30px] py-[30px] px-[40px] bg-[#331B3B] mb-3 rounded-[10px] mx-2'>
           <div className='min-w-full'>
             <div className=' grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px]'>
               {[1, 2, 3].map((id) => (
