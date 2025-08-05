@@ -75,9 +75,10 @@ const Navbar = () => {
             </li>
             <li className='max-lg:border-b max-lg:py-3 px-4'>
               <Link
-                href='/products'
+                href='https://drive.google.com/file/d/1rRB-ropPQize01S1pxsRQ0qNt9fFjUJV/view?usp=sharing'
+                target='_blank'
                 className={`${
-                  pathname === '/products'
+                  pathname === '/menu'
                     ? 'text-blue-700 font-bold'
                     : 'text-gray-700'
                 } hover:border-b-2 border-gray-600 duration-100`}
