@@ -147,16 +147,20 @@ export default function Home() {
                           : 'Accelerate'}
                       </p>
                       <p className='text-[#00153B] text-[50px] font-bold'>
-                        {id === 1 ? '₹200' : id === 2 ? '₹4,000' : '₹18,000'}
+                        {id === 1
+                          ? '₹150 - ₹300'
+                          : id === 2
+                          ? '₹4,300'
+                          : '₹20,000'}
                       </p>
                     </div>
                     <div>
                       <p className='text-[#717F87] text-[18px] font-medium'>
                         {id === 1
-                          ? 'One time order + Delivery fee '
+                          ? 'One time order + Delivery fee (Price may vary according to meal type)'
                           : id === 2
-                          ? '15 days plan'
-                          : '3 month plan'}
+                          ? '15 days plan (Price may vary according to meal type)'
+                          : '3 month plan (Price may vary according to meal type)'}
                       </p>
                     </div>
                   </div>
