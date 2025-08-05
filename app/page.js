@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <>
-      <div className='lg:pl-0 flex flex-col md:flex-row md:justify-between items-center relative sm:pl-[50px] mt-10 lg:mt-28 gap-7 md:gap-0 md:mb-4 mb-4'>
+      <div className='lg:pl-0 flex flex-col md:flex-row md:justify-between items-center relative sm:pl-[50px] mt-10 lg:mt-20 gap-7 md:gap-0 md:mb-4 mb-4'>
         <div className='flex flex-col items-center md:items-start gap-7'>
           <div className='w-full text-center md:text-left max-w-[46rem] overflow-hidden text-4xl sm:text-5xl lg:text-[87px] text-[#331B3B] font-bold font-hindVadodara leading-[99.8%] tracking-[0.01]'>
             <h1 className='whitespace-nowrap'>We serve homely</h1>
@@ -139,19 +139,16 @@ export default function Home() {
                           : 'Accelerate'}
                       </p>
                       <p className='text-[#00153B] text-[50px] font-bold'>
-                        {id === 1 ? 'Free' : id === 2 ? '$49' : '$89'}
+                        {id === 1 ? '₹200' : id === 2 ? '₹4,000' : '₹18,000'}
                       </p>
                     </div>
                     <div>
                       <p className='text-[#717F87] text-[18px] font-medium'>
                         {id === 1
-                          ? '5 Credits'
+                          ? 'One time order + Delivery fee '
                           : id === 2
-                          ? '50 Credits per month'
-                          : '100 Credits per month'}
-                      </p>
-                      <p className='text-[#717F87] text-[18px] font-medium'>
-                        {id === 1 ? '1 User' : 'Unlimited users'}
+                          ? '15 days plan'
+                          : '3 month plan'}
                       </p>
                     </div>
                   </div>

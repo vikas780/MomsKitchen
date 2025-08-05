@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 import '@/app/globals.css'
 import Link from 'next/link'
-import logo from '@/public/trend.svg'
+import logo from '@/public/logo1.svg'
 import Image from 'next/image'
 import { LoginLink, LogoutLink } from '@kinde-oss/kinde-auth-nextjs/components'
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
@@ -27,7 +27,7 @@ const Navbar = () => {
     <header className='flex   px-4 sm:pl-2  sm:pr-10 bg-white  min-h-[70px] tracking-wide relative z-50 '>
       <div className='flex flex-wrap items-center justify-between gap-5 w-full'>
         <Link href='/'>
-          <Image src={logo} width={180} height={80} alt='Logo' priority />
+          <Image src={logo} width={100} height={30} alt='Logo' priority />
         </Link>
 
         <div
