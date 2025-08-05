@@ -75,13 +75,32 @@ export default async function SubscribePage() {
                 </select>
               </div>
             </div>
-
+            <div className='sm:col-span-3'>
+              <label
+                htmlFor='plan'
+                className='block text-sm font-medium text-gray-900'
+              >
+                Meal type
+              </label>
+              <div className='mt-2'>
+                <select
+                  id='plan'
+                  name='plan'
+                  autoComplete='plan'
+                  className='w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 outline-gray-300 focus:outline-indigo-600 sm:text-sm'
+                >
+                  <option>Veg</option>
+                  <option>Non Veg</option>
+                  <option>Vegan</option>
+                </select>
+              </div>
+            </div>
             <div className='col-span-full'>
               <label
                 htmlFor='street-address'
                 className='block text-sm font-medium text-gray-900'
               >
-                Street address
+                Address
               </label>
               <div className='mt-2'>
                 <input
