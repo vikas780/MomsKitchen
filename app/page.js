@@ -2,6 +2,7 @@ import Image from 'next/image'
 import logo from '@/public/logo1.png'
 import about from '@/public/about_svg.svg'
 import SubscribeButton from '@/component/SubscribeButton'
+import Link from 'next/link'
 
 export default function Home() {
   const aboutUsData = [
@@ -45,10 +46,17 @@ export default function Home() {
               home-style flavors, crafted fresh and delivered with love—just
               like Mom makes.
             </span>
-
-            <button className='self-center md:self-start max-w-[207px] py-[22px] w-full flex justify-center items-center font-bold leading-[137.3%] tracking-wide bg-[#331B3B] text-white rounded-md lg:mt-4 md:mt-3 mt-2 cursor-pointer'>
+            {/* 
+            <button >
               Explore Menu
-            </button>
+            </button> */}
+            <Link
+              href='https://drive.google.com/file/d/1rRB-ropPQize01S1pxsRQ0qNt9fFjUJV/view?usp=sharing'
+              target='_blank'
+              className='self-center md:self-start max-w-[207px] py-[22px] w-full flex justify-center items-center font-bold leading-[137.3%] tracking-wide bg-[#331B3B] text-white rounded-md lg:mt-4 md:mt-3 mt-2 cursor-pointer'
+            >
+              Explore Menu
+            </Link>
           </div>
         </div>
         <div>
