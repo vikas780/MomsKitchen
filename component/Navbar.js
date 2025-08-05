@@ -3,12 +3,14 @@ import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 import '@/app/globals.css'
 import Link from 'next/link'
-import logo from '@/public/trend.svg'
+import logo from '@/public/logo1.svg'
 import Image from 'next/image'
-
+import { LoginLink, LogoutLink } from '@kinde-oss/kinde-auth-nextjs/components'
+import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
 const Navbar = () => {
-  // Fetch number of item in user cart
+  const { user } = useKindeBrowserClient()
 
+  console.log('USer from navbar', user)
   const [toggle, setToggle] = useState(false)
 
   //For small screen navigation
@@ -25,7 +27,7 @@ const Navbar = () => {
     <header className='flex   px-4 sm:pl-2  sm:pr-10 bg-white  min-h-[70px] tracking-wide relative z-50 '>
       <div className='flex flex-wrap items-center justify-between gap-5 w-full'>
         <Link href='/'>
-          <Image src={logo} width={180} height={80} alt='Logo' priority />
+          <Image src={logo} width={100} height={30} alt='Logo' priority />
         </Link>
 
         <div
@@ -63,7 +65,9 @@ const Navbar = () => {
               <Link
                 href='/'
                 className={`${
-                  pathname === '/' ? 'text-blue-700 font-bold' : 'text-gray-700'
+                  pathname === '/'
+                    ? 'text-[#8c3e75] font-bold'
+                    : 'text-gray-700'
                 } hover:border-b-2 border-gray-600 duration-100`}
               >
                 Home
@@ -78,52 +82,22 @@ const Navbar = () => {
                     : 'text-gray-700'
                 } hover:border-b-2 border-gray-600 duration-100`}
               >
-                Products
+                Menu
               </Link>
             </li>
           </ul>
         </div>
 
         <div className='flex items-center max-lg:ml-auto space-x-5'>
-          <span
-            className={`relative ${
-              pathname === '/cart' ? 'text-blue-700 font-bold' : 'text-gray-700'
-            } hover:text-blue-700`}
-          >
-            <Link
-              href='/cart'
-              className={`${
-                pathname === '/cart'
-                  ? 'text-blue-700 font-bold'
-                  : 'text-gray-700'
-              } hover:border-b-2 border-gray-600 duration-100`}
-            >
-              Cart
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='20px'
-                height='20px'
-                className={` cursor-pointer ${
-                  pathname === '/cart'
-                    ? 'fill-[#1d4ed8] inline'
-                    : 'text-gray-700'
-                } hover:fill-[#1d4ed8] inline`}
-                viewBox='0 0 512 512'
-              >
-                <path
-                  d='M164.96 300.004h.024c.02 0 .04-.004.059-.004H437a15.003 15.003 0 0 0 14.422-10.879l60-210a15.003 15.003 0 0 0-2.445-13.152A15.006 15.006 0 0 0 497 60H130.367l-10.722-48.254A15.003 15.003 0 0 0 105 0H15C6.715 0 0 6.715 0 15s6.715 15 15 15h77.969c1.898 8.55 51.312 230.918 54.156 243.71C131.184 280.64 120 296.536 120 315c0 24.812 20.188 45 45 45h272c8.285 0 15-6.715 15-15s-6.715-15-15-15H165c-8.27 0-15-6.73-15-15 0-8.258 6.707-14.977 14.96-14.996zM477.114 90l-51.43 180H177.032l-40-180zM150 405c0 24.813 20.188 45 45 45s45-20.188 45-45-20.188-45-45-45-45 20.188-45 45zm45-15c8.27 0 15 6.73 15 15s-6.73 15-15 15-15-6.73-15-15 6.73-15 15-15zm167 15c0 24.813 20.188 45 45 45s45-20.188 45-45-20.188-45-45-45-45 20.188-45 45zm45-15c8.27 0 15 6.73 15 15s-6.73 15-15 15-15-6.73-15-15 6.73-15 15-15zm0 0'
-                  data-original='#000000'
-                ></path>
-              </svg>
-            </Link>
-            <span
-              className={` absolute left-auto -ml-1 top-0 rounded-full px-1 py-0 text-xs text-white ${
-                pathname === '/cart' ? 'bg-blue-700 ' : 'bg-slate-700'
-              } hover:bg-blue-700`}
-            >
-              {0}
-            </span>
-          </span>
+          {user === undefined ? null : user ? (
+            <LogoutLink className='bg-[#8c3e75] p-3 rounded-lg m-4 text-white font-bold'>
+              Logout
+            </LogoutLink>
+          ) : (
+            <LoginLink className='bg-[#8c3e75] p-3 rounded-lg m-4 text-white font-bold'>
+              Login
+            </LoginLink>
+          )}
 
           <button
             id='toggleOpen'

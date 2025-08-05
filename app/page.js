@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import logo from '@/public/logo1.png'
-import about from '@/public/about.jpeg'
+import about from '@/public/about_svg.svg'
+import SubscribeButton from '@/component/SubscribeButton'
 
-export default async function Home() {
+export default function Home() {
   const aboutUsData = [
     'At The Magic of Mom, we believe that every meal should feel like home. Our mission is to deliver fresh, hygienic, and lovingly prepared tiffins that bring the warmth of a mother’s kitchen to your doorstep.',
     "Whether you're a student living away from home, a working professional with a busy schedule, or a senior citizen in need of nutritious meals — we’ve got you covered with customizable plans and on-time delivery.",
@@ -24,7 +25,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className='lg:pl-0 flex flex-col md:flex-row md:justify-between items-center relative sm:pl-[50px] mt-10 lg:mt-28 gap-7 md:gap-0 md:mb-4 mb-4'>
+      <div className='lg:pl-0 flex flex-col md:flex-row md:justify-between items-center relative sm:pl-[50px] mt-10 lg:mt-20 gap-7 md:gap-0 md:mb-4 mb-4'>
         <div className='flex flex-col items-center md:items-start gap-7'>
           <div className='w-full text-center md:text-left max-w-[46rem] overflow-hidden text-4xl sm:text-5xl lg:text-[87px] text-[#331B3B] font-bold font-hindVadodara leading-[99.8%] tracking-[0.01]'>
             <h1 className='whitespace-nowrap'>We serve homely</h1>
@@ -44,8 +45,9 @@ export default async function Home() {
               home-style flavors, crafted fresh and delivered with love—just
               like Mom makes.
             </span>
-            <button className='self-center md:self-start max-w-[207px] py-[22px] w-full flex justify-center items-center font-bold leading-[137.3%] tracking-wide bg-[#331B3B] text-white rounded-md lg:mt-4 md:mt-3 mt-2'>
-              Start Subscriptions
+
+            <button className='self-center md:self-start max-w-[207px] py-[22px] w-full flex justify-center items-center font-bold leading-[137.3%] tracking-wide bg-[#331B3B] text-white rounded-md lg:mt-4 md:mt-3 mt-2 cursor-pointer'>
+              Explore Menu
             </button>
           </div>
         </div>
@@ -102,7 +104,7 @@ export default async function Home() {
       </div>
 
       {/* Subscriptions Section */}
-      <div className='mt-7 mx-auto'>
+      <div className='mt-7 mx-auto '>
         <div className='mb-7 max-w-2xl text-center mx-auto'>
           <h2 className='md:text-5xl text-center w-full text-3xl  text-[#331B3B] font-bold'>
             <span className='relative z-10 ml-2'>
@@ -137,19 +139,16 @@ export default async function Home() {
                           : 'Accelerate'}
                       </p>
                       <p className='text-[#00153B] text-[50px] font-bold'>
-                        {id === 1 ? 'Free' : id === 2 ? '$49' : '$89'}
+                        {id === 1 ? '₹200' : id === 2 ? '₹4,000' : '₹18,000'}
                       </p>
                     </div>
                     <div>
                       <p className='text-[#717F87] text-[18px] font-medium'>
                         {id === 1
-                          ? '5 Credits'
+                          ? 'One time order + Delivery fee '
                           : id === 2
-                          ? '50 Credits per month'
-                          : '100 Credits per month'}
-                      </p>
-                      <p className='text-[#717F87] text-[18px] font-medium'>
-                        {id === 1 ? '1 User' : 'Unlimited users'}
+                          ? '15 days plan'
+                          : '3 month plan'}
                       </p>
                     </div>
                   </div>
@@ -162,19 +161,15 @@ export default async function Home() {
                       <p>WhatsApp support & reminders</p>
                     </div>
                     <div className='mt-[25px]'>
-                      <button
-                        className={`${
+                      <SubscribeButton
+                        label={
                           id === 2
-                            ? 'bg-[#E1E3E5] text-black'
-                            : 'bg-[#006EF5] text-white'
-                        } rounded-[5px] py-[15px] px-[25px] text-[14px] font-semibold`}
-                      >
-                        {id === 2
-                          ? 'Current Plan'
-                          : id === 1
-                          ? 'Downgrade +'
-                          : 'Upgrade +'}
-                      </button>
+                            ? 'Current Plan'
+                            : id === 1
+                            ? 'Downgrade +'
+                            : 'Upgrade +'
+                        }
+                      />
                     </div>
                   </div>
                 </div>
