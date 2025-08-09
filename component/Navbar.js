@@ -27,7 +27,14 @@ const Navbar = () => {
     <header className='flex   px-4 sm:pl-2  sm:pr-10 bg-white  min-h-[70px] tracking-wide relative z-50 '>
       <div className='flex flex-wrap items-center justify-between gap-5 w-full'>
         <Link href='/'>
-          <Image src={logo} width={100} height={30} alt='Logo' priority />
+          <Image
+            src={logo}
+            width={100}
+            height={30}
+            className='h-[60px] w-[60px]'
+            alt='Logo'
+            priority
+          />
         </Link>
 
         <div
@@ -73,29 +80,16 @@ const Navbar = () => {
                 Home
               </Link>
             </li>
-            <li className='max-lg:border-b max-lg:py-3 px-4'>
-              <Link
-                href='https://drive.google.com/file/d/1rRB-ropPQize01S1pxsRQ0qNt9fFjUJV/view?usp=sharing'
-                target='_blank'
-                className={`${
-                  pathname === '/menu'
-                    ? 'text-blue-700 font-bold'
-                    : 'text-gray-700'
-                } hover:border-b-2 border-gray-600 duration-100`}
-              >
-                Menu
-              </Link>
-            </li>
           </ul>
         </div>
 
-        <div className='flex items-center max-lg:ml-auto space-x-5'>
+        <div className='flex items-center max-lg:ml-auto space-x-5 '>
           {user === undefined ? null : user ? (
-            <LogoutLink className='bg-[#8c3e75] p-3 rounded-lg m-4 text-white font-bold'>
+            <LogoutLink className='bg-[#8c3e75] p-2 rounded-lg m-4 text-white font-normal sm:font-bold lg:font-bold'>
               Logout
             </LogoutLink>
           ) : (
-            <LoginLink className='bg-[#8c3e75] p-3 rounded-lg m-4 text-white font-bold'>
+            <LoginLink className='bg-[#8c3e75] p-2 rounded-lg m-4 text-white font-normal sm:font-bold lg:font-bold'>
               Login
             </LoginLink>
           )}
